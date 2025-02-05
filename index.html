@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub.io</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hi! I'm Alex.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
       body {
         background-color: #121212;
         color: white;
-        font-family: 'Arial', sans-serif;
+        font-family: 'Roboto', sans-serif;
         margin: 0;
       }
       header {
@@ -28,17 +29,6 @@
       p {
         line-height: 1.6;
       }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      li {
-        background-color: #343a40;
-        margin: 5px 0;
-        padding: 10px;
-        border-radius: 5px;
-        animation: type 2s steps(20, end) forwards;
-      }
       .green-link {
         color: #c8ffc8;
         text-decoration: none;
@@ -50,6 +40,9 @@
       .lighter-element {
         background-color: #326400;
       }
+      .li-text {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -57,25 +50,25 @@
       <h1>Welcome!</h1>
       <p>Hi! I'm Alex, .NET and full-stack developer from Ukraine.</p>
     </header>
-    <div class="container mt-4">
+    <div class="container mt-2">
       <div class="row">
         <div class="col-md-6 animate__animated animate__fadeInUp">
           <h2>Skills</h2>
-          <ul class="list-unstyled">
-            <li class="lighter-element">.NET 8</li>
-            <li class="lighter-element">C#</li>
-            <li class="lighter-element">ASP.NET</li>
-            <li class="lighter-element">Razor Pages</li>
-            <li class="lighter-element">Entity Framework</li>
-            <li class="lighter-element">HTML / CSS / JS</li>
+          <ul class="rounded-3 list-group list-group-flush">
+            <li class="list-group-item lighter-element li-text">.NET 8</li>
+            <li class="list-group-item lighter-element li-text">C#</li>
+            <li class="list-group-item lighter-element li-text">ASP.NET</li>
+            <li class="list-group-item lighter-element li-text">Razor Pages</li>
+            <li class="list-group-item lighter-element li-text">Entity Framework</li>
+            <li class="list-group-item lighter-element li-text">HTML / CSS / JS</li>
           </ul>
         </div>
-        <div class="col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="col-md-6 mt-2 animate__animated animate__fadeInUp animate__delay-1s">
           <h2>Certifications and Education</h2>
           <p>I am a graduate of SSS «ARSEC DNU» with a specialization in software engineering. I have extensive experience in development at amateur level in different languages. Feel free to message me 😀</p>
         </div>
       </div>
-      <section id="contact" class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+      <section id="contact" class="mt-2 animate__animated animate__fadeInUp animate__delay-2s">
         <div class="container text-center">
           <h2>Contact Me</h2>
           <a href="https://github.com/renwixx" class="d-inline-block mx-lg-2 mb-4">
@@ -91,7 +84,7 @@
           </a>
         </div>
       </section>
-      <section id="stacks-and-libraries" class="mt-2 animate__animated animate__fadeInUp animate__delay-3s">
+      <section class="animate__animated animate__fadeInUp animate__delay-3s">
         <div class="container text-center">
           <h2>Stacks and Libraries I Use</h2>
           <p>Mainly .NET, C#, ASP.NET, Razor Pages, Entity Framework, HTML / CSS / JS.</p>
