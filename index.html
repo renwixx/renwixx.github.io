@@ -101,38 +101,54 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script>
-      anime({
-        targets: '.typing-animation span',
-        textStrokeWidth: [0, 4],
-        loop: true,
-        duration: 500
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('.animate__animated');
-        let animationComplete = false;
-        sections.forEach(section => {
-          section.addEventListener('animationend', () => {
-            if (animationComplete) return;
-            animationComplete = true;
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          });
-        });
-        function checkAnimationCompletion() {
-          const incompleteSections = document.querySelectorAll('.animate__animated:not([data-animated="true"])');
-          if (incompleteSections.length === 0) {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          } else {
-            setTimeout(checkAnimationCompletion, 100);
-          }
-        }
-        checkAnimationCompletion();
-      });
+	  document.addEventListener('DOMContentLoaded', function() {
+	      const sections = document.querySelectorAll('.animate__animated');
+	      let animationComplete = false;
+
+	      sections.forEach(section => {
+	          section.addEventListener('animationend', () => {
+	              if (animationComplete) return;
+	              animationComplete = true;
+
+	              const scrollPosition = window.scrollY + window.innerHeight;
+	              const lastSectionTop = section.offsetTop + section.offsetHeight;
+
+	              if (scrollPosition >= lastSectionTop && !document.body.classList.contains('scrolled')) {
+	                  document.body.classList.add('scrolled');
+	                  window.scrollTo({
+	                      top: lastSectionTop,
+	                      behavior: 'smooth'
+	                  });
+	              }
+	          });
+	      });
+
+	      window.addEventListener('scroll', () => {
+	          if (animationComplete && !document.body.classList.contains('scrolled')) {
+	              const scrollPosition = window.scrollY + window.innerHeight;
+	              const lastSectionTop = sections[sections.length - 1].offsetTop + sections[sections.length - 1].offsetHeight;
+
+	              if (scrollPosition >= lastSectionTop) {
+	                  document.body.classList.add('scrolled');
+	                  window.scrollTo({
+	                      top: lastSectionTop,
+	                      behavior: 'smooth'
+	                  });
+	              }
+	          }
+	      });
+
+	      function checkAnimationCompletion() {
+	          const incompleteSections = document.querySelectorAll('.animate__animated:not([data-animated="true"])');
+	          if (incompleteSections.length === 0) {
+	              document.body.classList.add('scrolled');
+	          } else {
+	              setTimeout(checkAnimationCompletion, 100);
+	          }
+	      }
+
+	      checkAnimationCompletion();
+	  });
     </script>
   </body>
 </html>
