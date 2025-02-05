@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub.io</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+      body {
+        background-color: #121212;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        overflow: hidden;
+        margin: 0;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 800px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      p {
+        line-height: 1.6;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #343a40;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        animation: type 2s steps(20, end) forwards;
+      }
+      .green-link {
+        color: #c8ffc8;
+        text-decoration: none;
+      }
+      .green-link:hover {
+        color: #e1ffe1;
+        text-decoration: underline;
+      }
+      .lighter-element {
+        background-color: #326400;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="p-4 lighter-element text-white animate__animated animate__fadeInDown">
+      <h1>Welcome!</h1>
+      <p>Hi! I'm Alex, .NET and full-stack developer from Ukraine.</p>
+    </header>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6 animate__animated animate__fadeInUp">
+          <h2>Skills</h2>
+          <ul class="list-unstyled">
+            <li class="lighter-element">.NET 8</li>
+            <li class="lighter-element">C#</li>
+            <li class="lighter-element">ASP.NET</li>
+            <li class="lighter-element">Razor Pages</li>
+            <li class="lighter-element">Entity Framework</li>
+            <li class="lighter-element">HTML / CSS / JS</li>
+          </ul>
+        </div>
+        <div class="col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+          <h2>Certifications and Education</h2>
+          <p>I am a graduate of SSS «ARSEC DNU» with a specialization in software engineering. I have extensive experience in development at amateur level in different languages. Feel free to message me 😀</p>
+        </div>
+      </div>
+      <section id="contact" class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="container text-center">
+          <h2>Contact Me</h2>
+          <a href="https://github.com/renwixx" class="d-inline-block mx-lg-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color: #55aa00;" class="bi bi-github" width="60" height="60" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8a8 8 0 0 0-8-8" />
+            </svg>
+          </a>
+          <a href="mailto:hdhd81033@gmail.com" class="d-inline-block mx-lg-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color: #55aa00;" class="bi bi-mailbox-flag" width="60" height="60" viewBox="0 0 16 16">
+              <path d="M10.5 8.5V3.7l.9-.8a.5.5 0 0 0 .1-.4v-2A.5.5 0 0 0 11 0H9.5a.5.5 0 0 0-.5.5v8zM5 7c0 .3-.2.3-.4.2L4 7c-.2 0-.4 0-.6.2-.2 0-.4.1-.4-.2a1 1 0 0 1 2 0" />
+              <path d="M4 3h4v1H6.6A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3V3a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+      <section id="stacks-and-libraries" class="mt-2 animate__animated animate__fadeInUp animate__delay-3s">
+        <div class="container text-center">
+          <h2>Stacks and Libraries I Use</h2>
+          <p>Mainly .NET, C#, ASP.NET, Razor Pages, Entity Framework, HTML / CSS / JS.</p>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+      anime({
+        targets: '.typing-animation span',
+        textStrokeWidth: [0, 4],
+        loop: true,
+        duration: 500
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.animate__animated');
+        let animationComplete = false;
+        sections.forEach(section => {
+          section.addEventListener('animationend', () => {
+            if (animationComplete) return;
+            animationComplete = true;
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        });
+        function checkAnimationCompletion() {
+          const incompleteSections = document.querySelectorAll('.animate__animated:not([data-animated="true"])');
+          if (incompleteSections.length === 0) {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          } else {
+            setTimeout(checkAnimationCompletion, 100);
+          }
+        }
+        checkAnimationCompletion();
+      });
+    </script>
+  </body>
+</html>
