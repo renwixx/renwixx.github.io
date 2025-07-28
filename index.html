@@ -1,113 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi! I'm Alex.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <style>
-      body {
-        background-color: #121212;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .container {
-        max-width: 800px;
-        padding: 20px;
-      }
-      h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-      }
-      p {
-        line-height: 1.6;
-      }
-      .green-link {
-        color: #c8ffc8;
-        text-decoration: none;
-      }
-      .green-link:hover {
-        color: #e1ffe1;
-        text-decoration: underline;
-      }
-      .lighter-element {
-        background-color: #326400;
-      }
-      .li-text {
-        color: white;
-      }
-    </style>
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1190794452476075');
-      fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1190794452476075&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    <title>Renwixx - Profile</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <header class="p-4 lighter-element text-white animate__animated animate__fadeInDown">
-      <h1>Welcome!</h1>
-      <p>Hi! I'm Alex, .NET and full-stack developer from Ukraine.</p>
-    </header>
-    <div class="container mt-2">
-      <div class="row">
-        <div class="col-md-6 animate__animated animate__fadeInUp">
-          <h2>Skills</h2>
-          <ul class="rounded-3 list-group list-group-flush">
-            <li class="list-group-item lighter-element li-text">.NET 8</li>
-            <li class="list-group-item lighter-element li-text">C#</li>
-            <li class="list-group-item lighter-element li-text">ASP.NET</li>
-            <li class="list-group-item lighter-element li-text">Razor Pages</li>
-            <li class="list-group-item lighter-element li-text">Entity Framework</li>
-            <li class="list-group-item lighter-element li-text">HTML / CSS / JS</li>
-          </ul>
-        </div>
-        <div class="col-md-6 mt-2 animate__animated animate__fadeInUp animate__delay-1s">
-          <h2>Certifications and Education</h2>
-          <p>I am a graduate of SSS «ARSEC DNU» with a specialization in software engineering. I have extensive experience in development at amateur level in different languages. Feel free to message me 😀</p>
-        </div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="profile-card">
+      <div class="avatar-container">
+        <div class="avatar-glow"></div>
+        <img src="./avatar.png" alt="Renwixx" class="avatar" />
       </div>
-      <section id="contact" class="mt-2 animate__animated animate__fadeInUp animate__delay-2s">
-        <div class="container text-center">
-          <h2>Contact Me</h2>
-          <a href="https://github.com/renwixx" class="d-inline-block mx-lg-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color: #55aa00;" class="bi bi-github" width="60" height="60" viewBox="0 0 16 16">
-              <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8a8 8 0 0 0-8-8" />
-            </svg>
-          </a>
-          <a href="mailto:hdhd81033@gmail.com" class="d-inline-block mx-lg-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color: #55aa00;" class="bi bi-mailbox-flag" width="60" height="60" viewBox="0 0 16 16">
-              <path d="M10.5 8.5V3.7l.9-.8a.5.5 0 0 0 .1-.4v-2A.5.5 0 0 0 11 0H9.5a.5.5 0 0 0-.5.5v8zM5 7c0 .3-.2.3-.4.2L4 7c-.2 0-.4 0-.6.2-.2 0-.4.1-.4-.2a1 1 0 0 1 2 0" />
-              <path d="M4 3h4v1H6.6A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3V3a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3" />
-            </svg>
-          </a>
+      <h1 class="username">Renwixx</h1>
+      <div class="location-badge">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <a href="https://maps.app.goo.gl/UaMq1BfQLLE3XBJa9" class="nah"> Dnipro </a>
+      </div>
+      <div class="bio">
+        <p>.NET and full-stack developer.</p>
+        <div id="bio-extra" class="hidden">
+          <p>
+            <b>
+              <i class="newgen">NewGen SMP</i>
+            </b> Owner. Private Minecraft servers enjoyer :)
+          </p>
         </div>
-      </section>
-      <section class="animate__animated animate__fadeInUp animate__delay-3s">
-        <div class="container text-center">
-          <h2>Stacks and Libraries I Use</h2>
-          <p>Mainly .NET, C#, ASP.NET, Razor Pages, Entity Framework, HTML / CSS / JS.</p>
+        <button id="bio-toggle" class="show-more-btn">
+          <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/renwixx/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://www.twitch.tv/floxxxxxy" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+          </svg>
+        </a>
+        <a href="https://t.me/flokbazarit" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+          </svg>
+        </a>
+        <a href="https://open.spotify.com/user/31u2tzctgbsdctfffichzmoy5i4y" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z" />
+          </svg>
+        </a>
+        <a href="https://steamcommunity.com/id/renwixx/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.624 0 11.999-5.375 11.999-12S18.603 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z" />
+          </svg>
+        </a>
+        <a href="https://mirror.anixartapp.com/profile/1467219" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg fill="currentColor" class="icon" viewBox="3 3 41 41">
+            <defs>
+              <style>
+                .filled {
+                  fill: #fff;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round
+                }
+              </style>
+              <mask id="hole-mask">
+                <rect width="100%" height="100%" fill="#fff" />
+                <circle cx="24" cy="24.5" r="6.5" fill="#000" />
+              </mask>
+            </defs>
+            <path fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M22.006 8.767c-8.065.893-14.54 7.419-15.377 15.49-.802 7.716 3.429 14.536 9.806 17.606a.818.818 0 0 0 1.168-.611l.74-4.975a.809.809 0 0 1 1.154-.607c1.366.649 2.89 1.017 4.503 1.017s3.138-.368 4.503-1.017a.809.809 0 0 1 1.154.607l.74 4.974a.818.818 0 0 0 1.166.613c5.858-2.82 9.906-8.803 9.906-15.74 0-10.304-8.923-18.525-19.464-17.358Z" mask="url(#hole-mask)" />
+            <circle cx="24" cy="24.5" r="6.5" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.172 9.678c.59-.344.485-1.232-.16-1.456C10.048 7.195 5.155 5.614 4.6 6.17c-.502.502.994 5.236 2.007 8.227.222.654 1.088.737 1.463.158a15.242 15.242 0 0 1 5.102-4.876ZM34.828 9.678c-.59-.344-.485-1.232.16-1.456 2.964-1.027 7.857-2.608 8.412-2.053.502.502-.994 5.236-2.007 8.227-.222.654-1.088.737-1.463.158a15.242 15.242 0 0 0-5.102-4.876Z" class="filled" />
+          </svg>
+        </a>
+      </div>
+      <div class="music-player">
+        <div class="music-info">
+          <div class="track-details">
+            <div class="music-title" id="current-title">Выйди из комнаты</div>
+            <div class="music-artist" id="current-artist">ПОРНОФИЛЬМЫ</div>
+          </div>
+          <div class="music-controls">
+            <div class="volume-container">
+              <button class="music-btn" id="volume-btn">
+                <svg class="icon-music" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 1H6L2 5H0V11H2L6 15H8V1Z" />
+                  <path d="M12 8C12 9.10457 11.1046 10 10 10V6C11.1046 6 12 6.89543 12 8Z" />
+                </svg>
+              </button>
+              <div class="volume-slider" id="volume-slider">
+                <div class="volume-fill" id="volume-fill"></div>
+              </div>
+            </div>
+            <button class="music-btn" id="prev-btn">
+              <svg viewBox="0 0 16 16" fill="currentColor" class="icon-music">
+                <path d="M7.82842 8.00003L12.4142 3.41424L9.58578 0.585815L2.17157 8.00003L9.58578 15.4142L12.4142 12.5858L7.82842 8.00003Z" />
+              </svg>
+            </button>
+            <button class="music-btn" id="play-btn">
+              <svg class="icon-music" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M5 16L7 16L15 8L7 -2.7818e-08L5 0L5 16Z" />
+              </svg>
+            </button>
+            <button class="music-btn" id="next-btn">
+              <svg viewBox="0 0 16 16" fill="currentColor" class="icon-music">
+                <path d="M8.1716 8.00003L3.58582 3.41424L6.41424 0.585815L13.8285 8.00003L6.41424 15.4142L3.58582 12.5858L8.1716 8.00003Z" />
+              </svg>
+            </button>
+          </div>
         </div>
-      </section>
+        <div class="progress-container">
+          <span class="time-display" id="current-time">0:00</span>
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="time-display" id="duration">0:00</span>
+        </div>
+        <audio id="audio-player" preload="metadata"></audio>
+      </div>
+      <div class="visitor-counter">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        <img class="counter" src="https://vbr.nathanchung.dev/badge?page_id=renwixx.github.io&lcolor=1c1e29&color=1c1e29&style=flat-square&logoColor=1c1e29&text=%20" />
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
