@@ -305,42 +305,28 @@ if (cursor) {
   let currentX = 0;
   let currentY = 0;
 
-  // Коэффициент сглаживания. Чем меньше значение, тем плавнее и медленнее движение.
-  // Можете поэкспериментировать, например, с 0.1 или 0.2
   const smoothing = 0.3; 
 
-  // При движении мыши мы просто обновляем целевые координаты
   window.addEventListener('mousemove', (e) => {
     targetX = e.clientX;
     targetY = e.clientY;
   });
 
-  // Создаем функцию анимации, которая будет запускаться на каждом кадре
   const animate = () => {
-    // Вычисляем новую позицию кружка, двигая его на часть расстояния к цели
     currentX += (targetX - currentX) * smoothing;
     currentY += (targetY - currentY) * smoothing;
     
-    // Применяем обновленные координаты к стилям курсора
     cursor.style.left = currentX + 'px';
     cursor.style.top = currentY + 'px';
     
-    // Продолжаем анимацию на следующем кадре
     requestAnimationFrame(animate);
   };
-
-  // Запускаем нашу анимацию
   animate();
-
-
-  // --- Логика для увеличения при клике остается прежней ---
   
-  // Добавляем класс "clicked" при нажатии кнопки мыши
   window.addEventListener('mousedown', () => {
     cursor.classList.add('clicked');
   });
 
-  // Убираем класс "clicked" когда отпускаем кнопку
   window.addEventListener('mouseup', () => {
     cursor.classList.remove('clicked');
   });
