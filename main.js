@@ -2,16 +2,20 @@ const bioToggle = document.getElementById('bio-toggle');
 const bioExtra = document.getElementById('bio-extra');
 const chevronIcon = bioToggle?.querySelector('.chevron-icon');
 
-if (bioToggle && bioExtra) {
-	bioToggle.addEventListener('click', function() {
-		const isHidden = bioExtra.classList.contains('hidden');
+if (bioToggle && bioExtra && chevronIcon) {
+	bioExtra.classList.remove('hidden');
 
-		if (isHidden) {
-			bioExtra.classList.remove('hidden');
-			bioToggle.innerHTML = '<svg class="chevron-icon rotated" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>';
+	bioToggle.addEventListener('click', function() {
+		const isExpanded = bioExtra.classList.contains('expanded');
+
+		if (isExpanded) {
+			bioExtra.style.maxHeight = null;
+			bioExtra.classList.remove('expanded');
+			chevronIcon.classList.remove('rotated');
 		} else {
-			bioExtra.classList.add('hidden');
-			bioToggle.innerHTML = '<svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>';
+			bioExtra.style.maxHeight = bioExtra.scrollHeight + 'px';
+			bioExtra.classList.add('expanded');
+			chevronIcon.classList.add('rotated');
 		}
 	});
 }
@@ -51,15 +55,18 @@ const volumeFill = document.getElementById('volume-fill');
 if (audioPlayer && playlist.length > 0) {
 	audioPlayer.volume = currentVolume;
 	audioPlayer.src = playlist[0].url;
+
 	function formatTime(seconds) {
 		const mins = Math.floor(seconds / 60);
 		const secs = Math.floor(seconds % 60);
 		return mins + ':' + (secs < 10 ? '0' : '') + secs;
 	}
+
 	function updateSongInfo() {
 		if (titleEl) titleEl.textContent = playlist[currentSongIndex].title;
 		if (artistEl) artistEl.textContent = playlist[currentSongIndex].artist;
 	}
+
 	function updateProgress() {
 		if (audioPlayer.duration) {
 			const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
@@ -67,6 +74,7 @@ if (audioPlayer && playlist.length > 0) {
 			if (currentTimeEl) currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
 		}
 	}
+
 	function updateVolume() {
 		const volumePercent = currentVolume * 100;
 		if (volumeFill) volumeFill.style.width = volumePercent + '%';
@@ -81,6 +89,7 @@ if (audioPlayer && playlist.length > 0) {
 			}
 		}
 	}
+
 	function playPause() {
 		if (isPlaying) {
 			audioPlayer.pause();
@@ -95,6 +104,7 @@ if (audioPlayer && playlist.length > 0) {
 			});
 		}
 	}
+
 	function previousSong() {
 		currentSongIndex = currentSongIndex > 0 ? currentSongIndex - 1 : playlist.length - 1;
 		audioPlayer.src = playlist[currentSongIndex].url;
@@ -103,6 +113,7 @@ if (audioPlayer && playlist.length > 0) {
 			audioPlayer.play();
 		}
 	}
+
 	function nextSong() {
 		currentSongIndex = currentSongIndex < playlist.length - 1 ? currentSongIndex + 1 : 0;
 		audioPlayer.src = playlist[currentSongIndex].url;
@@ -111,11 +122,13 @@ if (audioPlayer && playlist.length > 0) {
 			audioPlayer.play();
 		}
 	}
+
 	function toggleMute() {
 		isMuted = !isMuted;
 		audioPlayer.muted = isMuted;
 		updateVolume();
 	}
+
 	function setupDraggableSlider(sliderElement, onDrag) {
 		let isDragging = false;
 		const updateValue = (event) => {
@@ -167,4 +180,168 @@ if (audioPlayer && playlist.length > 0) {
 		isPlaying = false;
 		console.error('Audio playback error');
 	});
+}
+
+const slider = document.querySelector('.portfolio-grid');
+const track = document.querySelector('.portfolio-track');
+
+if (slider && track) {
+	let isDown = false;
+	let startX;
+	let positionAtStart;
+	let currentPosition = 0;
+	let velocity = 0;
+	let prevX = 0;
+	let animationID;
+
+	const setPosition = (x) => {
+		currentPosition = x;
+		track.style.transform = `translateX(${x}px)`;
+	};
+
+	const start = (e) => {
+		isDown = true;
+		slider.classList.add('active');
+		const currentX = e.pageX || e.touches[0].pageX;
+		startX = currentX;
+
+		const transformMatrix = new WebKitCSSMatrix(window.getComputedStyle(track).transform);
+		positionAtStart = transformMatrix.m41;
+
+		prevX = currentX;
+		velocity = 0;
+		cancelAnimationFrame(animationID);
+
+		window.addEventListener('mousemove', move);
+		window.addEventListener('touchmove', move);
+		window.addEventListener('mouseup', end);
+		window.addEventListener('touchend', end);
+	};
+
+	const move = (e) => {
+		if (!isDown) return;
+		e.preventDefault();
+
+		const currentX = e.pageX || e.touches[0].pageX;
+		const walk = currentX - startX;
+		const newPosition = positionAtStart + walk;
+
+		const deltaX = currentX - prevX;
+		velocity = 0.8 * deltaX + 0.2 * velocity;
+		prevX = currentX;
+
+		const minPosition = -(track.scrollWidth - slider.clientWidth);
+
+		if (newPosition > 0) {
+			const overscroll = newPosition;
+			setPosition(overscroll * 0.5);
+		} else if (newPosition < minPosition) {
+			const overscroll = newPosition - minPosition;
+			setPosition(minPosition + overscroll * 0.5);
+		} else {
+			setPosition(newPosition);
+		}
+	};
+
+	const end = () => {
+		if (!isDown) return;
+		isDown = false;
+		slider.classList.remove('active');
+
+		const minPosition = -(track.scrollWidth - slider.clientWidth);
+
+		if (currentPosition > 0) {
+			springBack(0);
+		} else if (currentPosition < minPosition) {
+			springBack(minPosition);
+		} else {
+			momentumScroll();
+		}
+
+		window.removeEventListener('mousemove', move);
+		window.removeEventListener('touchmove', move);
+		window.removeEventListener('mouseup', end);
+		window.removeEventListener('touchend', end);
+	};
+
+	const momentumScroll = () => {
+		const minPosition = -(track.scrollWidth - slider.clientWidth);
+		const newPosition = currentPosition + velocity;
+
+		if (newPosition > 0 || newPosition < minPosition) {
+			velocity = 0;
+			end();
+			return;
+		}
+
+		if (Math.abs(velocity) < 0.5) return;
+
+		setPosition(newPosition);
+		velocity *= 0.8;
+		animationID = requestAnimationFrame(momentumScroll);
+	};
+
+	const springBack = (target) => {
+		const distance = target - currentPosition;
+		if (Math.abs(distance) < 1) {
+			setPosition(target);
+			return;
+		}
+		setPosition(currentPosition + distance * 0.3);
+		animationID = requestAnimationFrame(() => springBack(target));
+	};
+
+	slider.addEventListener('mousedown', start);
+	slider.addEventListener('touchstart', start, {
+		passive: true
+	});
+}
+
+const cursor = document.getElementById('custom-cursor');
+
+if (cursor) {
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  // Коэффициент сглаживания. Чем меньше значение, тем плавнее и медленнее движение.
+  // Можете поэкспериментировать, например, с 0.1 или 0.2
+  const smoothing = 0.3; 
+
+  // При движении мыши мы просто обновляем целевые координаты
+  window.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
+  // Создаем функцию анимации, которая будет запускаться на каждом кадре
+  const animate = () => {
+    // Вычисляем новую позицию кружка, двигая его на часть расстояния к цели
+    currentX += (targetX - currentX) * smoothing;
+    currentY += (targetY - currentY) * smoothing;
+    
+    // Применяем обновленные координаты к стилям курсора
+    cursor.style.left = currentX + 'px';
+    cursor.style.top = currentY + 'px';
+    
+    // Продолжаем анимацию на следующем кадре
+    requestAnimationFrame(animate);
+  };
+
+  // Запускаем нашу анимацию
+  animate();
+
+
+  // --- Логика для увеличения при клике остается прежней ---
+  
+  // Добавляем класс "clicked" при нажатии кнопки мыши
+  window.addEventListener('mousedown', () => {
+    cursor.classList.add('clicked');
+  });
+
+  // Убираем класс "clicked" когда отпускаем кнопку
+  window.addEventListener('mouseup', () => {
+    cursor.classList.remove('clicked');
+  });
 }
