@@ -475,13 +475,7 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-.newgen {
-  background-image: linear-gradient(to right, #ffff55, #ffaa00);
-  color: transparent;
-  background-clip: text;
-}
+} 
 
 .portfolio-btn {
   display: inline-flex;
@@ -724,5 +718,6 @@ body {
     font-size: 0.85rem;
   }
 }
+
 
 
